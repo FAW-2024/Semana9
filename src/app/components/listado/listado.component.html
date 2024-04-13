@@ -1,0 +1,13 @@
+<h1>Listado Rick And Morty</h1> 
+@if (cp.length > 0) {
+    @for(imagen of cp; track imagen.id) {
+        <img [src]="imagen.image">
+    }
+}
+<div id="listado">
+    @for(personaje of respuesta.results; track personaje.id) {
+        <app-personaje [personaje]="personaje" (click)="setCurrentPersonaje(personaje)"></app-personaje>
+    }
+</div>
+<button (click)="backPage()">&lt;</button>
+<button (click)="nextPage()">&gt;</button>
